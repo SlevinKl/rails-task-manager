@@ -1,0 +1,15 @@
+<h1>My Tasks</h1>
+
+<ul class="list-group">
+  <% @tasks.each do |task| %>
+  <li class="list-group-item">
+    <%= check_box_tag("completed", value = "1", checked = task.completed) %>
+    <%= link_to task.title, task_path(task) %>
+    <%= link_to "🗑",
+    task_path(task),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "+ Add a new Task", tasks_new_path, class: "btn btn-success"%>

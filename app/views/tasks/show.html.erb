@@ -1,0 +1,11 @@
+<div class="navbar">
+  <h1><%= @task.title %></h1>
+  <%= link_to "Edit Task", edit_task_path(@task), class: "btn btn-success" %>
+</div>
+
+<div class="details"><%= @task.details %></div>
+
+<div class="container">
+<p><%= check_box_tag("completed", value = "1", checked = @task.completed) %> This Task is <%= @task.completed ? "Completed": "Not Completed" %></p>
+<%= link_to "Back To List", tasks_path, class: "btn btn-info"%>
+</div>
