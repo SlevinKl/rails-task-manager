@@ -1,8 +1,8 @@
 <h1>My Tasks</h1>
 
-<ul class="list-group">
+<ul>
   <% @tasks.each do |task| %>
-  <li class="list-group-item">
+  <li>
     <%= check_box_tag("completed", value = "1", checked = task.completed) %>
     <%= link_to task.title, task_path(task) %>
     <%= link_to "🗑",
